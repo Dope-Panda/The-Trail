@@ -1,0 +1,93 @@
+@echo off
+color 0f
+:menu
+cls
+echo 
+echo 1) Begin the quest
+echo 2) Quit like a lil bitch :,(
+set /p number=
+
+if %number% == 1 goto startgame
+if %number% == 2 goto exit
+
+:startgame
+cls
+echo What is thy name my royal nig
+set /p name=
+echo Man that is a gay name, who would name their son or daughter %name%
+echo Climb in back and we'll be off (y/n)
+set /p start=
+
+if %start% == y goto quest1
+if %start% == n goto menu
+goto startgame
+
+:exit
+exit
+
+:quest1
+cls
+echo We've finnaly arrived to Riverwood
+echo A WILD BEAR APPEARS FROM A RASPBERY BUSH
+echo 1) Pull out 12 gauge and blast his furry ass
+echo 2) Run away
+set /p start=
+
+if %number% == 1 goto Goodchoice
+if %number% == 2 goto wrong
+
+:Goodchoice
+echo The blast absolutly buttfucked the bear and now he is twitching on the ground
+pause
+goto nextpath 
+
+:wrong
+echo you are the biggest pussy ever
+goto exit
+
+:nextpath
+echo You see an old man limping across the trail
+echo 1) stab him and steal his scheckels
+echo 2) ignore him
+set /p start=
+
+if %number% == 1 goto reward
+if %number% == 2 goto die
+
+:reward
+echo +13 scheckels
+echo +1 bronse dagger
+echo -1 12 gauge
+echo Your shotgun broke
+pause
+goto nextpath1
+
+:die
+echo you die from a heart attack
+goto quest1 
+
+:nextpath1
+echo You hear a faint bark from the right
+echo You see a huge pitbull
+echo You realize that if you want to survive you must tame him
+echo 1) Slowly raise hand towards the dog so that he can smell you
+echo 2) Give dog the last piece of jerky
+set /p start=
+
+if %number% 1 goto Companion
+if %number% 2 goto Companion
+
+:Companion
+pause
+echo You succesfully tamed the dog
+echo What are you going to name her?
+set /p dogname
+goto walk
+
+:walk
+echo You walk the trail with /p dogname
+pause
+goto walk2
+
+:walk2
+echo 
