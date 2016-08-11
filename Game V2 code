@@ -1,0 +1,339 @@
+@echo off
+color 0f
+
+:Start
+echo					  THE TRAIL
+echo.
+echo.
+echo.
+echo 		Welcome to my attempt on a .bat game!
+echo 		I realize this is not that fun of a game.
+echo 		But I did have a blast making this and I learned alot
+pause
+goto menu
+
+:menu
+cls
+echo.
+echo.
+echo 	Welcome to THE TRAIL
+echo.
+echo 			1) Begin Game
+echo.
+echo 			2) Quit
+echo.
+set /p number=
+
+if %number% == 1 goto startgame
+if %number% == 2 goto exit
+
+:startgame
+cls
+echo.
+echo.
+echo So traveler, what is your name?
+set /p name=
+echo Man, that is just a truly awful name, why in the world someone name their child %name%
+echo Well..., climb in back and we'll be off 		(yes/no)
+set /p start=
+
+if %start% == yes goto Time
+if %start% == no goto menu
+goto startgame
+
+:Time
+cls
+echo.
+echo.
+echo.
+echo Three Days Later...
+pause
+goto Arrival
+
+:exit
+exit
+
+:Arrival
+echo.
+echo.
+echo We've finnaly arrived to Gander Mountain in Bemidji
+echo.
+echo Which is the closest trading station west of the Superior Lake
+echo.
+echo Wait do you hear that?
+echo.
+echo a) Yeah, it sounds like something is rustling in the woods.
+echo b) No, your just crazy
+set /p start=
+
+if %number% == a goto First Battle
+if %number% == b goto First Battle
+
+:First Battle
+cls
+echo.
+echo.
+echo A WILD CAVE BEAR APPEARS
+echo.
+echo You must kill the bear so it won't harm others
+echo.
+echo How are you going to kill it?
+echo 	1) Pull out your Benelli Montefeltro Silver Semi-Auto Shotgun and shoot the bear
+echo 	2) Run away
+set /p start=
+
+if %number% == 1 goto Goodchoice
+if %number% == 2 goto wrong
+
+:Goodchoice
+echo.
+echo.
+echo You killed the bear with a single shot. It lies there blood spilling out onto the ground.
+echo You walk over to the bear and you harvest all the parts you can
+echo.
+echo +5 Bear pelt
+echo +13 Bear teeth
+echo +7 Bones
+pause
+goto nextpath 
+
+:wrong
+echo.
+echo.
+echo.
+echo.
+echo You shower the world with your Cowardness
+pause
+goto menu
+
+:nextpath
+cls
+echo.
+echo.
+echo You see an old man limping across the trail
+echo 	1) stab him and steal his scheckels
+echo 	2) ignore him
+set /p start=
+
+if %number% == 1 goto reward
+if %number% == 2 goto die
+
+:reward
+echo.
+echo.
+echo +13 scheckels
+echo +1 leather shoes
+echo +1 ragged clothes
+echo -1 shotgun
+echo Your shotgun brakes as you trip
+pause
+goto nextpath1
+
+:die
+echo.
+echo.
+echo You died from a heart attack due to your "Bitchfulnes"
+goto menu 
+
+:nextpath1
+cls
+echo.
+echo.
+echo You hear a faint bark
+echo.
+echo You see a huge pitbull
+echo.
+echo You realize that if you want to survive you must tame him
+pause
+goto tame
+
+:tame
+echo.
+echo.
+echo You pull out a piece of meat and give it to the pitbull
+echo The dog likes the jerky
+echo +50% Tame
+echo 	1) Hold out hand so dog can smell
+echo 	2) Call dog over and pet him
+set /p number=
+
+if %number% == 1 goto Tamesucceed
+if %number% == 2 goto Tamesucceed
+
+:Tamesucceed
+echo.
+echo.
+echo +50% Tame
+echo Pitbull was succesfully tamed
+echo What are you going to name your dog?
+set /p dogname=
+pause
+goto Walk
+
+:Walk
+cls
+echo.
+echo.
+echo You begin your journey with %dogname%
+pause
+goto Walk2
+
+:Walk2
+echo.
+echo.
+echo %dogname% barks at a bush
+echo You walk over to the bush and examine what's inside
+echo You see a rabbit burst out and sprint towards the woods
+echo %dogname% KILL THE RABBIT AND BRING IT BACK!
+echo %dogname% comesback 3 minutes later with the dead rabbit in it's mouth
+pause
+goto rabbitharvest
+
+:rabbitharvest
+echo.
+echo.
+echo You take out some of the bones and hide from the bear you killed and begin to fasten your knife.
+echo Your attempt to create a knife succeded
+echo.
+echo You begin to harvest the rabbit
+echo +1 rabbit hide
+echo +2 bones
+echo.
+pause
+goto Gather
+
+:Gather
+cls
+echo.
+echo.
+echo You need to gather materials to craft weapons and tools
+echo.
+pause
+goto GatherMaterials 
+
+:GatherMaterials
+echo.
+echo.
+echo You begin to gather materials
+echo.
+echo +13 sticks 
+echo +8 rocks
+echo.
+echo Now, you must craft your tools
+echo.
+pause
+goto toolcrafting
+
+:toolcrafting
+cls
+echo.
+echo.
+echo Start Crafting
+pause
+goto crafting2
+
+:crafting2
+echo.
+echo.
+echo +1 bow
+echo +1 spear
+echo +12 arrows
+echo.
+echo Crafting finished
+echo Now that you finished crafting you should start walking down the trail again
+pause
+goto walk3
+
+:walk3
+cls
+echo.
+echo.
+echo You begin walking on the trail again, untill you start to get this eerie feeling,
+echo It almost feels like something is stalking you from the woods.
+echo *whispers* %dogname% scan the area, quickly
+pause
+goto Battle
+
+:Battle
+echo Find it %dogname%
+echo A wild Troll appears
+echo %dogname% Get over here!
+echo 	a) Take out Bone Knife
+echo 	b) Take out Bow
+echo 	c) Take out Spear
+set /p number=
+
+if %number% == a goto knifeOption
+if %number% == b goto BowOption
+if %number% == c goto SpearOption
+
+:knifeOption
+cls
+echo.
+echo.
+echo You stab the Troll with knife
+echo.
+echo Troll dies
+pause
+goto Battlewin
+
+:BowOption
+cls
+echo.
+echo.
+echo You pull out your Bow and aim it at the trolls head
+echo You shoot the arrow into the trolls head which kills it instantly
+pause
+goto Battlewin
+
+:SpearOption
+cls
+echo.
+echo.
+echo You kill the troll with your spear
+pause
+goto Battlewin
+
+:Battlewin
+echo.
+echo.
+echo You walk over to the dead troll and harvest it's body
+echo.
+echo +4 White fur
+echo +8 Bones
+echo +3 Grams of Fat
+echo.
+echo You now must travel to Tenstrike
+echo.
+echo tenstrike is 30 miles away
+pause
+goto Tenstrike
+
+:Tenstrike
+cls
+echo.
+echo.
+echo.
+echo You begin to travel to Tenstrike by foot
+echo.
+pause
+goto End
+
+:traveltime
+cls
+echo.
+echo.
+echo.
+echo.
+echo You made it back home!
+pause
+goto Win
+
+:Win
+cls
+echo.
+echo.
+echo You have completed the game
+echo Thanks for playing
+pause
+goto exit
